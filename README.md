@@ -22,31 +22,6 @@ A responsive, mobile-friendly modern web application for predicting CGPA (Cumula
 4. **View Results**: Your semester GPA and cumulative GPA will be automatically calculated and displayed.
 5. **Share Your Results**: Use the share button to copy or share your predicted academic performance.
 
-## Grade to Point Conversion
-
-The application uses the following grade to point conversion system:
-
-| Grade | Points |
-|-------|--------|
-| A     | 10     |
-| A-    | 9      |
-| B     | 8      |
-| B-    | 7      |
-| C     | 6      |
-| C-    | 5      |
-| D     | 4      |
-| F     | 0      |
-
-## CGPA Calculation Formula
-
-The formula used for calculating CGPA is:
-
-𝐶𝐺𝑃𝐴 = ∑(𝐶𝑖 × 𝐺𝑃𝑖) / ∑𝐶𝑖
-
-Where:
-- 𝐶𝑖 = Credits for each course
-- 𝐺𝑃𝑖 = Grade points obtained in each course
-- ∑ = Sum of all courses
 
 ## Grade to Point Conversion
 
