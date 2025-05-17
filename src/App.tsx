@@ -6,6 +6,7 @@ import PreviousCGPAInput from './components/PreviousCGPAInput';
 import SubjectList from './components/SubjectList';
 import ResultCard from './components/ResultCard';
 import LoadingSpinner from './components/LoadingSpinner';
+import ParticlesBackground from './components/ParticlesBackground';
 import { SEMESTERS, Subject, Semester } from './data/semesterData';
 import { calculateSemesterGPA, calculateCGPA, getTotalCredits } from './utils/cgpaCalculator';
 
@@ -65,6 +66,7 @@ function App() {
 
   return (
     <div className="page-container">
+      <ParticlesBackground />
       <header className="app-header">
         <Container>
           <h1 className="fs-3 fw-bold">College CGPA Predictor</h1>
