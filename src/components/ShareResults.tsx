@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Row, Col, Form, Alert } from 'react-bootstrap';
-import { FaShareAlt, FaClipboard, FaCheck } from 'react-icons/fa';
 
 interface ShareResultsProps {
   semesterGPA: number;
@@ -44,7 +43,7 @@ const ShareResults: React.FC<ShareResultsProps> = ({ semesterGPA, cgpa }) => {
           color: '#c8a2c8'
         }}
       >
-        <FaShareAlt className="me-2" /> Share Your Results
+        Share Your Results
       </Button>
 
       {showShareOptions && (
@@ -74,15 +73,7 @@ const ShareResults: React.FC<ShareResultsProps> = ({ semesterGPA, cgpa }) => {
                   color: '#c8a2c8'
                 }}
               >
-                {copied ? (
-                  <>
-                    <FaCheck style={{ marginRight: '8px' }} /> Copied!
-                  </>
-                ) : (
-                  <>
-                    <FaClipboard style={{ marginRight: '8px' }} /> Copy Text
-                  </>
-                )}
+                {copied ? "Copied!" : "Copy Text"}
               </Button>
             </Col>
           </Row>
