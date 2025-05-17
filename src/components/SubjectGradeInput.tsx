@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, Row, Col, Form, Badge, Button } from 'react-bootstrap';
 import { Subject, gradeToPoint } from '../data/semesterData';
 
