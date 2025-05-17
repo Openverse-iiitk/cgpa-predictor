@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Subject } from '../data/semesterData';
 import SubjectGradeInput from './SubjectGradeInput';
 

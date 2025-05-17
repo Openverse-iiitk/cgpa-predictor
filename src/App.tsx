@@ -2,16 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 import SemesterSelector from './components/SemesterSelector';
+import BranchSelector from './components/BranchSelector';
 import PreviousCGPAInput from './components/PreviousCGPAInput';
 import SubjectList from './components/SubjectList';
 import ResultCard from './components/ResultCard';
 import LoadingSpinner from './components/LoadingSpinner';
 import ParticlesBackground from './components/ParticlesBackground';
-import { SEMESTERS, Subject, Semester } from './data/semesterData';
+import { SEMESTERS, Subject, Semester, BRANCHES, Branch } from './data/semesterData';
 import { calculateSemesterGPA, calculateCGPA, getTotalCredits } from './utils/cgpaCalculator';
 
 function App() {
   const [selectedSemester, setSelectedSemester] = useState<Semester | null>(null);
+  const [selectedBranch, setSelectedBranch] = useState<Branch | null>(null);
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [previousCGPA, setPreviousCGPA] = useState<number>(0);
   const [previousCredits, setPreviousCredits] = useState<number>(0);
@@ -28,15 +30,20 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // When semester is selected, reset subjects and update the show previous CGPA flag
+  // When semester or branch is selected, reset subjects and update the show previous CGPA flag
   useEffect(() => {
-    if (selectedSemester) {
-      // Create a deep copy of the subjects to avoid modifying the original data
-      const semesterSubjects = selectedSemester.subjects.map(subj => ({ ...subj }));
-      setSubjects(semesterSubjects);
+    if (selectedSemester && selectedBranch) {
+      // Get branch-specific and common subjects
+      const branchSubjects = selectedSemester.subjects[selectedBranch.id] || [];
+      const commonSubjects = selectedSemester.commonSubjects || [];
+      
+      // Combine both types of subjects
+      const allSubjects = [...branchSubjects, ...commonSubjects].map(subj => ({ ...subj }));
+      
+      setSubjects(allSubjects);
       setShowPreviousCGPA(selectedSemester.id > 1);
     }
-  }, [selectedSemester]);
+  }, [selectedSemester, selectedBranch]);
 
   // Calculate GPA and CGPA whenever subjects or previous CGPA changes
   useEffect(() => {
@@ -113,6 +120,12 @@ function App() {
           ) : (
             <Row>
               <Col lg={10} className="mx-auto">
+                <BranchSelector 
+                  branches={BRANCHES} 
+                  selectedBranch={selectedBranch} 
+                  onSelectBranch={setSelectedBranch} 
+                />
+
                 <SemesterSelector 
                   semesters={SEMESTERS} 
                   selectedSemester={selectedSemester} 
@@ -128,11 +141,11 @@ function App() {
                   />
                 )}
 
-                {selectedSemester && subjects.length > 0 && (
+                {selectedSemester && selectedBranch && subjects.length > 0 && (
                   <SubjectList subjects={subjects} onSubjectChange={handleSubjectChange} />
                 )}
 
-                {selectedSemester && (
+                {selectedSemester && selectedBranch && (
                   <div className="mt-4 mb-4">
                     <ResultCard 
                       semesterGPA={semesterGPA} 

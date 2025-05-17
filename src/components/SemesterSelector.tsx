@@ -23,6 +23,11 @@ const SemesterSelector: React.FC<SemesterSelectorProps> = ({
               variant={selectedSemester?.id === semester.id ? 'primary' : 'outline-info'}
               className="w-100 py-2 semester-btn"
               onClick={() => onSelectSemester(semester)}
+              style={{ 
+                backgroundColor: selectedSemester?.id === semester.id ? 'rgba(200, 162, 200, 0.2)' : 'transparent',
+                borderColor: '#c8a2c8',
+                color: '#c8a2c8'
+              }}
             >
               {semester.name}
             </Button>

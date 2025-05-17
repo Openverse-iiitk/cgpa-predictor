@@ -61,7 +61,13 @@ const SubjectGradeInput: React.FC<SubjectGradeInputProps> = ({ subject, onChange
               variant={subject.grade === grade ? 'primary' : 'outline-info'}
               size="sm"
               className="rounded-circle d-flex align-items-center justify-content-center semester-btn"
-              style={{ width: '32px', height: '32px' }}
+              style={{ 
+                width: '32px', 
+                height: '32px',
+                backgroundColor: subject.grade === grade ? 'rgba(200, 162, 200, 0.2)' : 'transparent',
+                borderColor: '#c8a2c8',
+                color: '#c8a2c8'
+              }}
               onClick={() => handleGradeChange(grade)}
             >
               {grade.replace('-', '')}

@@ -18,7 +18,7 @@ code {
 /* Animation for pulse effect on GPA changes */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    box-shadow: 0 0 0 0 rgba(202, 37, 235, 0.7);
   }
   70% {
     box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);

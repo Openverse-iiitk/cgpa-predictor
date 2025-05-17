@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Form, Row, Col, Alert } from 'react-bootstrap';
+import { Form, Row, Col, Alert } from 'react-bootstrap';
 
 interface PreviousCGPAInputProps {
   previousCGPA: number;
