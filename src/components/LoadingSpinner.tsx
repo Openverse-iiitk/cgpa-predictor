@@ -6,8 +6,19 @@ interface LoadingSpinnerProps {}
 const LoadingSpinner: React.FC<LoadingSpinnerProps> = () => {
   return (
     <div className="d-flex flex-column align-items-center justify-content-center py-5">
-      <Spinner animation="border" role="status" variant="primary" style={{ width: '3rem', height: '3rem' }} />
-      <span className="mt-3 fs-5 text-muted">Loading...</span>
+      <div className="neon-spinner">
+        <Spinner 
+          animation="border" 
+          role="status" 
+          style={{ 
+            width: '3rem', 
+            height: '3rem', 
+            borderColor: 'transparent #0fe0ff transparent #0fe0ff',
+            borderWidth: '3px'
+          }} 
+        />
+      </div>
+      <span className="mt-3 fs-5 text-neon">Loading...</span>
     </div>
   );
 };

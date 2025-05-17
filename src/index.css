@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  color: #333;
+  color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -29,5 +29,5 @@ code {
 }
 
 .animate-pulse {
-  animation: pulse 1.5s ease-in-out;
+  animation: pulse 2s ease-in-out;
 }

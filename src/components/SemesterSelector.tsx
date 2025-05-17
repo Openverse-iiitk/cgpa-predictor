@@ -14,14 +14,14 @@ const SemesterSelector: React.FC<SemesterSelectorProps> = ({
   onSelectSemester,
 }) => {
   return (
-    <div className="mb-4">
-      <h2 className="fs-4 fw-semibold mb-3">Select Your Semester</h2>
+    <div className="mb-4 semester-selector-container">
+      <h2 className="fs-4 fw-semibold mb-3 text-neon">Select Your Semester</h2>
       <Row xs={2} md={4} className="g-3">
         {semesters.map((semester) => (
           <Col key={semester.id}>
             <Button
-              variant={selectedSemester?.id === semester.id ? 'primary' : 'light'}
-              className="w-100 py-2"
+              variant={selectedSemester?.id === semester.id ? 'primary' : 'outline-info'}
+              className="w-100 py-2 semester-btn"
               onClick={() => onSelectSemester(semester)}
             >
               {semester.name}

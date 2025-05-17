@@ -38,10 +38,9 @@ const PreviousCGPAInput: React.FC<PreviousCGPAInputProps> = ({
   };
 
   return (
-    <Card className="mb-4 bg-light">
-      <Card.Body>
-        <h2 className="fs-4 fw-semibold mb-3">Previous Academic Record</h2>
-        <Row>
+    <div className="mb-4 semester-selector-container">
+      <h2 className="fs-4 fw-semibold mb-3 text-neon">Previous Academic Record</h2>
+      <Row>
           <Col md={6}>
             <Form.Group className="mb-3">
               <Form.Label htmlFor="previousCGPA">Previous CGPA</Form.Label>
@@ -97,8 +96,7 @@ const PreviousCGPAInput: React.FC<PreviousCGPAInputProps> = ({
             Please enter your total credits if you have a previous CGPA.
           </Alert>
         )}
-      </Card.Body>
-    </Card>
+    </div>
   );
 };
 
