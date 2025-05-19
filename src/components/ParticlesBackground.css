@@ -6,5 +6,9 @@
   height: 100%;
   z-index: -1;
   background-color: #000000; /* Black background for better neon effect */
-  background: linear-gradient(135deg, #000000 0%, #0a0a14 100%); /* Dark gradient for depth */
+  background: linear-gradient(135deg, #000000 0%, #0a0a14 100%);} /* Dark gradient for depth */
+  /* $SELECTION_PLACEHOLDER$ */
+.particles-container canvas {
+  /* shift all white particles to e.g. cyan */
+  filter: hue-rotate(160deg) saturate(5) brightness(3.1);
 }
